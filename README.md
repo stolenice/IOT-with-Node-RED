@@ -1,4 +1,4 @@
 Folder là Wokwi with Platformio
 
 Cài đặt Node-RED;
-Mở MENU Node-RED Editor -> Import đoạn JSON (file Weather +Time Control), (bỏ script trong []);
+Mở MENU Node-RED Editor -> Import đoạn JSON (file Weather +Time Control);
