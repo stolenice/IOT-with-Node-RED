@@ -1,0 +1,13 @@
+[wokwi]
+version = 1
+firmware = '.pio\build\esp32doit-devkit-v1\firmware.bin'
+elf = '.pio\build\esp32doit-devkit-v1\firmware.bin'
+
+diagram = "diagram.json"
+serialPort = "rfc2217://0.0.0.0:4000"
+[wokwi.wifi]
+ssid = "Wokwi-GUEST"
+password = ""
+[wokwi.mqtt]
+broker = "6f280729577c4c89b2a0cfa0d588f93f.s1.eu.hivemq.cloud"
+port = 8883
