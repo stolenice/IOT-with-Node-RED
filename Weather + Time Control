@@ -1,0 +1,1583 @@
+[
+    {
+        "id": "switch_weather",
+        "type": "ui_switch",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Enable Weather",
+        "label": "ON/OFF",
+        "tooltip": "",
+        "group": "weather_automation_group",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "change_weather_enable"
+            ]
+        ]
+    },
+    {
+        "id": "change_weather_enable",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.weather_enabled",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weather_enabled",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "327d0b7a97c8bccf"
+            ]
+        ]
+    },
+    {
+        "id": "text_input_lat",
+        "type": "ui_text_input",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Vĩ độ",
+        "label": "Vĩ độ",
+        "tooltip": "",
+        "group": "weather_automation_group",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "change_lat"
+            ]
+        ]
+    },
+    {
+        "id": "change_lat",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.lat",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lat",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "text_input_lon",
+        "type": "ui_text_input",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Kinh độ",
+        "label": "Kinh độ",
+        "tooltip": "",
+        "group": "weather_automation_group",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "change_lon"
+            ]
+        ]
+    },
+    {
+        "id": "change_lon",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.lon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lon",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "button_fetch",
+        "type": "ui_button",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Áp dụng",
+        "group": "weather_automation_group",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Áp dụng",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "049f274d429b277f"
+            ]
+        ]
+    },
+    {
+        "id": "switch_schedule",
+        "type": "ui_switch",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Enable Schedule",
+        "label": "Chế độ tự động",
+        "tooltip": "",
+        "group": "schedule_automation_group",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "change_schedule_enable"
+            ]
+        ]
+    },
+    {
+        "id": "change_schedule_enable",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.schedule_enabled",
+        "rules": [
+            {
+                "t": "set",
+                "p": "schedule_enabled",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 800,
+        "wires": [
+            [
+                "6014d6bfaaa94e00"
+            ]
+        ]
+    },
+    {
+        "id": "slider_evening",
+        "type": "ui_slider",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "label": "Giờ bắt đầu chuyển màu buổi tối",
+        "tooltip": "",
+        "group": "schedule_automation_group",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": 0,
+        "max": "23",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 860,
+        "wires": [
+            [
+                "change_evening_hour"
+            ]
+        ]
+    },
+    {
+        "id": "change_evening_hour",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.evening_hour",
+        "rules": [
+            {
+                "t": "set",
+                "p": "evening_hour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dropdown_day_color",
+        "type": "ui_dropdown",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "label": "Màu mặc định ban ngày",
+        "tooltip": "",
+        "place": "Select color",
+        "group": "schedule_automation_group",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Red",
+                "value": "255,0,0",
+                "type": "str"
+            },
+            {
+                "label": "Green",
+                "value": "0,255,0",
+                "type": "str"
+            },
+            {
+                "label": "Blue",
+                "value": "0,0,255",
+                "type": "str"
+            },
+            {
+                "label": "White",
+                "value": "255,255,255",
+                "type": "str"
+            },
+            {
+                "label": "Orange",
+                "value": "255,128,0",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 150,
+        "y": 920,
+        "wires": [
+            [
+                "change_day_color"
+            ]
+        ]
+    },
+    {
+        "id": "change_day_color",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.day_color",
+        "rules": [
+            {
+                "t": "set",
+                "p": "day_color",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "text_status",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "status_monitor_group",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thời tiết hiện tại",
+        "format": "{{msg.payload.weather[0].main}} | Temp: {{msg.payload.main.temp}}°C",
+        "layout": "row-spread",
+        "className": "",
+        "style": "",
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1340,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "gauge_temp",
+        "type": "ui_gauge",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "group": "status_monitor_group",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gauge",
+        "title": "Nhiệt độ",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "colour_picker_manual",
+        "type": "ui_colour_picker",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "label": "Điều khiển LED thủ công",
+        "group": "952151695bab3e5c",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "mqtt_out_led"
+            ]
+        ]
+    },
+    {
+        "id": "chart_temp_history",
+        "type": "ui_chart",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "group": "status_monitor_group",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Lịch sử nhiệt độ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1620,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "inject_weather",
+        "type": "inject",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Weather Timer",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "check_weather_enable"
+            ]
+        ]
+    },
+    {
+        "id": "http_request_weather",
+        "type": "http request",
+        "z": "572b1c4f7cf5e97f",
+        "name": "http request",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1030,
+        "y": 380,
+        "wires": [
+            [
+                "function_weather",
+                "text_status",
+                "function_to_gauge",
+                "function_to_chart",
+                "df5e5db88520bd1c"
+            ]
+        ]
+    },
+    {
+        "id": "function_weather",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "xử lý dữ liệu thời tiết",
+        "func": "if (!msg.payload || !msg.payload.weather || !msg.payload.main) {\n    node.warn(\"Invalid API response\");\n    return null;\n}\n\nvar weather = msg.payload.weather[0].main;\nvar temp = msg.payload.main.temp;\nvar rgb;\n\nif (/Rain|Drizzle|Thunderstorm/.test(weather)) {\n    rgb = \"0,0,255\";\n} else if (temp > 30) {\n    rgb = \"255,0,0\";\n} else {\n    rgb = \"0,255,0\";\n}\n\nmsg.payload = rgb;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 140,
+        "wires": [
+            [
+                "mqtt_out_led"
+            ]
+        ]
+    },
+    {
+        "id": "function_to_gauge",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Đồng hồ đo",
+        "func": "msg.payload = msg.payload.main.temp;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 260,
+        "wires": [
+            [
+                "gauge_temp"
+            ]
+        ]
+    },
+    {
+        "id": "function_to_chart",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Biểu đồ",
+        "func": "msg.topic = \"Temp\";\nmsg.payload = msg.payload.main.temp;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 320,
+        "wires": [
+            [
+                "chart_temp_history"
+            ]
+        ]
+    },
+    {
+        "id": "inject_schedule",
+        "type": "inject",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Schedule Timer",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 750,
+        "y": 860,
+        "wires": [
+            [
+                "check_schedule_enable"
+            ]
+        ]
+    },
+    {
+        "id": "check_schedule_enable",
+        "type": "switch",
+        "z": "572b1c4f7cf5e97f",
+        "name": "switch",
+        "property": "schedule_enabled",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 860,
+        "wires": [
+            [
+                "function_schedule"
+            ],
+            [
+                "ca22c377d5e811a9"
+            ]
+        ]
+    },
+    {
+        "id": "function_schedule",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "xử lý dữ liệu lịch",
+        "func": "const tz = global.get('tz') || 'Asia/Ho_Chi_Minh';\nconst now = new Date();\n//const hour = now.getHours();\n\nconst eveningHour = Number(global.get('evening_hour')) || 18;\nconst dayColor = global.get('day_color') || '0,255,255';\nconst eveningColor = global.get('evening_color') || '255,128,0';\n\n/***** LẤY GIỜ HIỆN TẠI HOẶC GIỜ TEST *****/\n// Ưu tiên: msg.test_hour -> global.use_test_hour + global.test_hour -> giờ thật theo TZ\nlet hour = null;\n// Nếu có inject msg.test_hour thì dùng\nif (Number.isFinite(Number(msg.test_hour))) {\n    hour = Number(msg.test_hour);\n}\n// 2) Nếu bật “Dùng giờ thủ công” trên dashboard thì dùng global.test_hour\nelse if (global.get('use_test_hour') === true && Number.isFinite(Number(global.get('test_hour')))) {\n    hour = Number(global.get('test_hour'));\n}\n// 3) Ngược lại: lấy giờ thật theo múi giờ\nelse {\n    hour = Number(new Date().toLocaleString('en-US', { timeZone: tz, hour: 'numeric', hour12: false }));\n}\n\n\n// Nếu eveningHour=18 => 18+12/24=1 dư 6 => nightCutoff=6 => Night = [18-23] + [0-6)\nconst nightCutoff = (eveningHour + 12) % 24;\nconst isNight = (hour >= eveningHour) || (hour < nightCutoff);\nconst mode = isNight ? '🌙' : '🌞';\nconst rgb = isNight ? eveningColor : dayColor;\n\nflow.set('current_hour', hour);\nflow.set('night_cutoff', nightCutoff);\nflow.set('current_mode', mode);\nflow.set('current_rgb', rgb);\n\nmsg.payload = rgb;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 860,
+        "wires": [
+            [
+                "mqtt_out_led",
+                "183075e46c298abf",
+                "9c34d7bb20ac8c46",
+                "af3291de4abf78d1"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out_led",
+        "type": "mqtt out",
+        "z": "572b1c4f7cf5e97f",
+        "name": "HiveMQ Cloud",
+        "topic": "home/rgb/control",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "77e6ffaaee6ea937",
+        "x": 1560,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "mqtt_in_status",
+        "type": "mqtt in",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "topic": "home/rgb/control",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "77e6ffaaee6ea937",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 1240,
+        "wires": [
+            [
+                "function_to_status_text"
+            ]
+        ]
+    },
+    {
+        "id": "function_to_status_text",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "To LED Status",
+        "func": "msg.payload = 'LED hiển thị: ' + msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1240,
+        "wires": [
+            [
+                "text_led_status"
+            ]
+        ]
+    },
+    {
+        "id": "text_led_status",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "952151695bab3e5c",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LED Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": "",
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 530,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "f019e1063334d209",
+        "type": "comment",
+        "z": "572b1c4f7cf5e97f",
+        "name": "🌤 Weather Automation",
+        "info": "",
+        "x": 120,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "12c7a875fac77116",
+        "type": "comment",
+        "z": "572b1c4f7cf5e97f",
+        "name": "🕓 Schedule Automation",
+        "info": "",
+        "x": 130,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a5734081201712a3",
+        "type": "comment",
+        "z": "572b1c4f7cf5e97f",
+        "name": "💡 Status Monitor",
+        "info": "",
+        "x": 110,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "df5e5db88520bd1c",
+        "type": "debug",
+        "z": "572b1c4f7cf5e97f",
+        "name": "API Response",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "check_weather_enable",
+        "type": "switch",
+        "z": "572b1c4f7cf5e97f",
+        "name": "switch",
+        "property": "weather_enabled",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "ddbc09626158f159"
+            ]
+        ]
+    },
+    {
+        "id": "ddbc09626158f159",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "xử lý dữ liệu API",
+        "func": "// Lấy thông tin\nconst lat = global.get('lat');\nconst lon = global.get('lon');\nconst city = global.get('city');\n\nnode.warn(`Lat: ${lat}, Lon: ${lon}, City: ${city}`);\n\n\n// Ưu tiên tọa độ trước\nif (lat && lon && !isNaN(lat) && !isNaN(lon)) {\n    msg.url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f11693309f6e59629540dfe23980a1c2&units=metric&t=${Date.now()}`;\n    msg.method = \"GET\";\n    node.warn(\"Using Lat/Lon API\");\n    return msg;\n}\n\n// Nếu không có tọa độ → chuyển sang city\nif (city && city.trim() !== \"\") {\n    msg.url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=f11693309f6e59629540dfe23980a1c2&units=metric&t=${Date.now()}`;\n    msg.method = \"GET\";\n    node.warn(\"Using City Name API\");\n    return msg;\n}\n\n// Không có dữ liệu hợp lệ\nnode.error(\"Thiếu dữ liệu đầu vào: yêu cầu nhập tọa độ hoặc tên thành phố!\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 380,
+        "wires": [
+            [
+                "http_request_weather"
+            ]
+        ]
+    },
+    {
+        "id": "049f274d429b277f",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "msg.payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "check_weather_enable"
+            ]
+        ]
+    },
+    {
+        "id": "6014d6bfaaa94e00",
+        "type": "debug",
+        "z": "572b1c4f7cf5e97f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "327d0b7a97c8bccf",
+        "type": "debug",
+        "z": "572b1c4f7cf5e97f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f82a0a3b607b85f6",
+        "type": "ui_text_input",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Tên thành phố",
+        "label": "Tên thành phố",
+        "tooltip": "",
+        "group": "weather_automation_group",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "str",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "c446e773369efc89"
+            ]
+        ]
+    },
+    {
+        "id": "c446e773369efc89",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.city",
+        "rules": [
+            {
+                "t": "set",
+                "p": "city",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca22c377d5e811a9",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "d": true,
+        "name": "tắt led",
+        "func": "msg.payload = \"0,0,0\"; // tắt led\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 940,
+        "wires": [
+            [
+                "mqtt_out_led"
+            ]
+        ]
+    },
+    {
+        "id": "ec0e5b2cb09f356c",
+        "type": "ui_dropdown",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "label": "Màu mặc định ban đêm",
+        "tooltip": "",
+        "place": "Select color",
+        "group": "schedule_automation_group",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Red",
+                "value": "255,0,0",
+                "type": "str"
+            },
+            {
+                "label": "Green",
+                "value": "0,255,0",
+                "type": "str"
+            },
+            {
+                "label": "Blue",
+                "value": "0,0,255",
+                "type": "str"
+            },
+            {
+                "label": "White",
+                "value": "255,255,255",
+                "type": "str"
+            },
+            {
+                "label": "Orange",
+                "value": "255,128,0",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 150,
+        "y": 980,
+        "wires": [
+            [
+                "ad1c2258e60c02d2"
+            ]
+        ]
+    },
+    {
+        "id": "ad1c2258e60c02d2",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.evening_color",
+        "rules": [
+            {
+                "t": "set",
+                "p": "evening_color",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13e31a3041f31410",
+        "type": "ui_button",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Áp dụng",
+        "group": "schedule_automation_group",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Áp dụng",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "topicType": "str",
+        "x": 700,
+        "y": 960,
+        "wires": [
+            [
+                "3e30b0854b84ab48",
+                "cee9d7d80cdd632b"
+            ]
+        ]
+    },
+    {
+        "id": "c10356c4bcc96a0b",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "6c2d48722a4cb736",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Giờ hiện tại",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1750,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "ecd3c71e616ab220",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "6c2d48722a4cb736",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Chế độ hiện tại",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1760,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "94f565eaa53de305",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "6c2d48722a4cb736",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Màu RGB áp dụng",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1770,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "01e348991f5aa27c",
+        "type": "ui_chart",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "group": "6c2d48722a4cb736",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "label": "Lịch sử thay đổi",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "255",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff0000",
+            "#00ff00",
+            "#0000ff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1760,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "183075e46c298abf",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Hiển thị",
+        "func": "var msg1 = { payload: flow.get('current_hour') };\nvar msg2 = { payload: flow.get('night_cutoff') };\nvar msg3 = { payload: flow.get('current_mode') };\nvar msg4 = { payload: flow.get('current_rgb') };\n\nreturn [msg1, msg2, msg3, msg4];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 1020,
+        "wires": [
+            [
+                "c10356c4bcc96a0b"
+            ],
+            [
+                "1879d3b02b6922f8"
+            ],
+            [
+                "ecd3c71e616ab220"
+            ],
+            [
+                "94f565eaa53de305"
+            ]
+        ]
+    },
+    {
+        "id": "cee9d7d80cdd632b",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "msg.payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "x": 910,
+        "y": 960,
+        "wires": [
+            [
+                "check_schedule_enable"
+            ]
+        ]
+    },
+    {
+        "id": "3e30b0854b84ab48",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "xử lý thông báo công tắc",
+        "func": "var enabled = global.get('schedule_enabled');\n\nif (!enabled) {\n    msg.payload = \"⚠️ Bạn đang ở chế độ thủ công !\";\n    return [msg, null]; // gửi ra output 1 (ui_toast)\n}\nmsg.payload = flow.get('current_rgb') || \"255,255,255\";\nmsg.topic = \"home/rgb/control\";\nreturn [null, msg]; // gửi ra output 2 (MQTT)\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1040,
+        "wires": [
+            [
+                "6dc6ae81268beacd"
+            ]
+        ]
+    },
+    {
+        "id": "9c34d7bb20ac8c46",
+        "type": "ui_template",
+        "z": "572b1c4f7cf5e97f",
+        "group": "6c2d48722a4cb736",
+        "name": "Màu",
+        "order": 5,
+        "width": "9",
+        "height": "1",
+        "format": "<div style=\"display: flex; justify-content: flex-end; width: 100%\">\n  <div id=\"rgbBox\" style=\"width:60px;height:35px;border-radius:6px;border:1px solid #333;\"></div>\n</div>\n\n<script>\n  (function(scope){\n  scope.$watch('msg', function(msg){\n    if(!msg || !msg.payload) return;\n    var el = document.getElementById('rgbBox');\n    el.style.background = 'rgb(' + msg.payload + ')';\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1530,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af3291de4abf78d1",
+        "type": "function",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Biểu đồ ",
+        "func": "const rgb = (flow.get('current_rgb')||'0,0,0').split(',').map(n=>Number(n)||0);\nconst [r,g,b] = rgb;\nconst now = new Date();\n// log text (nếu muốn lưu)\nlet logs = flow.get('history')||[];\nlogs.unshift(`${now.toLocaleTimeString()} — ${flow.get('current_mode')} — ${rgb.join(',')}`);\nlogs = logs.slice(0,5);\nflow.set('history', logs);\n\n// trả về 3 message cho 3 series\nreturn [\n  {topic:'R', payload:r},\n  {topic:'G', payload:g},\n  {topic:'B', payload:b}\n];",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 1180,
+        "wires": [
+            [
+                "01e348991f5aa27c"
+            ],
+            [
+                "01e348991f5aa27c"
+            ],
+            [
+                "01e348991f5aa27c"
+            ]
+        ]
+    },
+    {
+        "id": "6dc6ae81268beacd",
+        "type": "ui_toast",
+        "z": "572b1c4f7cf5e97f",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Thông báo ",
+        "x": 1250,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "8be955c3b27066fd",
+        "type": "ui_switch",
+        "z": "572b1c4f7cf5e97f",
+        "name": "",
+        "label": "Chế độ thủ công",
+        "tooltip": "",
+        "group": "schedule_automation_group",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 1060,
+        "wires": [
+            [
+                "20bfd5d1a2011942"
+            ]
+        ]
+    },
+    {
+        "id": "f9451d2eb9b628ce",
+        "type": "ui_slider",
+        "z": "572b1c4f7cf5e97f",
+        "name": "Giờ hiện tại thủ công",
+        "label": "Giờ hiện tại thủ công",
+        "tooltip": "",
+        "group": "schedule_automation_group",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "23",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 1120,
+        "wires": [
+            [
+                "0c1111c395cc8c56"
+            ]
+        ]
+    },
+    {
+        "id": "20bfd5d1a2011942",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.use_test_hour",
+        "rules": [
+            {
+                "t": "set",
+                "p": "use_test_hour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c1111c395cc8c56",
+        "type": "change",
+        "z": "572b1c4f7cf5e97f",
+        "name": "global.test_hour",
+        "rules": [
+            {
+                "t": "set",
+                "p": "test_hour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1879d3b02b6922f8",
+        "type": "ui_text",
+        "z": "572b1c4f7cf5e97f",
+        "group": "6c2d48722a4cb736",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Giờ kết thúc buổi tối",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1780,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "weather_automation_group",
+        "type": "ui_group",
+        "name": "Weather Automation",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "schedule_automation_group",
+        "type": "ui_group",
+        "name": "Schedule Automation",
+        "tab": "37bf7dee281d6569",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "status_monitor_group",
+        "type": "ui_group",
+        "name": "Status Monitor",
+        "tab": "dashboard_tab",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "952151695bab3e5c",
+        "type": "ui_group",
+        "name": "Color",
+        "tab": "dashboard_tab",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "77e6ffaaee6ea937",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Cloud",
+        "broker": "6f280729577c4c89b2a0cfa0d588f93f.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "2004",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "1",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6c2d48722a4cb736",
+        "type": "ui_group",
+        "name": "Status Monitor",
+        "tab": "37bf7dee281d6569",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Weather LED Control",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "37bf7dee281d6569",
+        "type": "ui_tab",
+        "name": "Time LED Control",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e05d90e3740f8fa2",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
